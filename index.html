@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>twodots - Wasatch ROI Analysis</title>
-    <!-- Google Fonts -->
+    <title>twodots | Wasatch ROI Analysis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
 * {
     margin: 0;
@@ -16,31 +15,28 @@
 }
 
 :root {
-    --bg-dark: #0d1117;
-    --bg-card: rgba(255,255,255,0.03);
-    --border: rgba(255,255,255,0.08);
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255,255,255,0.6);
-    --text-muted: rgba(255,255,255,0.4);
-    --accent: #0099E6;
-    --accent-light: #33b5ff;
-    --danger: #ef4444;
-    --success: #22c55e;
+    --bg-light: #fafaf8;
+    --bg-dark: #1a1a1a;
+    --bg-card: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-medium: #6b7280;
+    --text-light: #9ca3af;
+    --text-white: #ffffff;
+    --text-white-muted: rgba(255,255,255,0.7);
+    --border-light: #e5e5e5;
+    --border-dark: rgba(255,255,255,0.1);
+    --accent: #22c55e;
+    --accent-muted: #166534;
+    --danger: #dc2626;
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
     line-height: 1.6;
-}
-
-/* Grid background */
-.grid-bg {
-    background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Header */
@@ -49,153 +45,205 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    padding: 24px 48px;
+    padding: 20px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: linear-gradient(to bottom, var(--bg-dark) 0%, transparent 100%);
+    background: var(--bg-dark);
 }
 
 .logo {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--text-primary);
+    height: 24px;
 }
 
 .badge {
-    padding: 12px 20px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
     font-size: 12px;
-    letter-spacing: 1px;
-    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--text-white-muted);
 }
 
 /* Sections */
 section {
-    min-height: 100vh;
-    padding: 120px 48px 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 120px 48px;
 }
 
-section.auto-height {
-    min-height: auto;
+section.dark {
+    background: var(--bg-dark);
+    color: var(--text-white);
+}
+
+section.hero {
+    padding-top: 160px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     width: 100%;
 }
 
-/* Section labels */
+/* Typography */
 .section-label {
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-    margin-bottom: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 16px;
 }
 
-/* Headlines */
+.dark .section-label {
+    color: var(--text-white-muted);
+}
+
 h1 {
-    font-family: 'Playfair Display', serif;
     font-size: 56px;
-    font-weight: 400;
-    line-height: 1.2;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 24px;
-}
-
-h1 .accent {
-    color: var(--accent);
-    font-style: italic;
+    letter-spacing: -1px;
 }
 
 h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 400;
+    font-size: 42px;
+    font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 24px;
-}
-
-h2 .accent {
-    color: var(--accent);
-    font-style: italic;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 .subtitle {
     font-size: 18px;
-    color: var(--text-secondary);
+    color: var(--text-medium);
     max-width: 600px;
-    margin-bottom: 48px;
+    line-height: 1.7;
 }
 
-/* Stats cards */
-.stats-row {
+.dark .subtitle {
+    color: var(--text-white-muted);
+}
+
+/* Hero Stats */
+.hero-stats {
+    display: flex;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.hero-stat {
+    text-align: left;
+}
+
+.hero-stat-value {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-dark);
+}
+
+.hero-stat-label {
+    font-size: 14px;
+    color: var(--text-medium);
+    margin-top: 8px;
+}
+
+/* Metric Cards */
+.metrics-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    margin-top: 48px;
+    margin-top: 60px;
 }
 
-.stat-card {
+.metric-card {
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 40px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 32px;
     text-align: center;
 }
 
-.stat-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
+.metric-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-dark);
     margin-bottom: 8px;
 }
 
-.stat-value .accent {
+.metric-value.accent {
     color: var(--accent);
 }
 
-.stat-label {
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: var(--text-muted);
-    text-transform: uppercase;
+.metric-label {
+    font-size: 14px;
+    color: var(--text-medium);
 }
 
-/* Calculation boxes */
-.calc-grid {
+/* Dark section cards */
+.dark .metric-card {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--border-dark);
+}
+
+.dark .metric-value {
+    color: var(--text-white);
+}
+
+.dark .metric-label {
+    color: var(--text-white-muted);
+}
+
+/* Calculation Layout */
+.calc-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 40px;
     margin-top: 48px;
 }
 
 .calc-box {
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
     padding: 32px;
 }
 
-.calc-box-title {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: var(--text-muted);
-    margin-bottom: 24px;
+.dark .calc-box {
+    background: rgba(255,255,255,0.03);
+    border-color: var(--border-dark);
+}
+
+.calc-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.dark .calc-title {
+    color: var(--text-white-muted);
 }
 
 .calc-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.dark .calc-row {
+    border-color: var(--border-dark);
 }
 
 .calc-row:last-child {
@@ -203,13 +251,17 @@ h2 .accent {
 }
 
 .calc-label {
-    color: var(--text-secondary);
     font-size: 14px;
+    color: var(--text-medium);
+}
+
+.dark .calc-label {
+    color: var(--text-white-muted);
 }
 
 .calc-value {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .calc-value.highlight {
@@ -217,11 +269,57 @@ h2 .accent {
     font-size: 18px;
 }
 
-.calc-value.highlight-alt {
-    color: var(--accent-light);
+/* Result Box */
+.result-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 48px;
 }
 
-/* Summary section */
+.result-value {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.result-label {
+    font-size: 14px;
+    color: var(--text-medium);
+    margin-top: 12px;
+}
+
+.dark .result-label {
+    color: var(--text-white-muted);
+}
+
+/* Callout */
+.callout {
+    margin-top: 32px;
+    padding: 20px 24px;
+    background: rgba(34, 197, 94, 0.08);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+}
+
+.callout p {
+    font-size: 14px;
+    color: var(--text-medium);
+    margin: 0;
+}
+
+.dark .callout {
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.dark .callout p {
+    color: var(--text-white-muted);
+}
+
+/* Summary Table */
 .summary-table {
     margin-top: 48px;
 }
@@ -231,117 +329,114 @@ h2 .accent {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.dark .summary-row {
+    border-color: var(--border-dark);
 }
 
 .summary-row.total {
     border-bottom: none;
-    padding-top: 32px;
-}
-
-.summary-row.total .summary-label {
-    color: var(--accent);
-    font-weight: 600;
-}
-
-.summary-row.total .summary-value {
-    color: var(--accent);
-    font-size: 24px;
+    padding-top: 28px;
+    margin-top: 8px;
+    border-top: 2px solid var(--accent);
 }
 
 .summary-label {
-    color: var(--text-secondary);
     font-size: 16px;
+    color: var(--text-medium);
+}
+
+.dark .summary-label {
+    color: var(--text-white-muted);
+}
+
+.summary-row.total .summary-label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.dark .summary-row.total .summary-label {
+    color: var(--text-white);
 }
 
 .summary-value {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-/* Social proof callout */
-.callout {
-    margin-top: 32px;
-    max-width: 600px;
-    border-left: 3px solid var(--accent);
-    padding-left: 24px;
+.summary-row.total .summary-value {
+    font-size: 28px;
+    color: var(--accent);
 }
 
-.callout p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    margin: 0;
-}
-
-/* Problem section */
+/* Problem Section */
 .problem-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+    margin-top: 48px;
 }
 
-.problem-stat {
+.problem-stats {
     display: flex;
-    gap: 40px;
+    gap: 48px;
     margin-top: 32px;
 }
 
-.problem-stat-item {
-    text-align: left;
-}
-
 .problem-stat-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
+    font-size: 56px;
+    font-weight: 700;
     color: var(--danger);
     line-height: 1;
 }
 
 .problem-stat-label {
     font-size: 13px;
-    color: var(--text-muted);
+    color: var(--text-medium);
     margin-top: 8px;
 }
 
-.problem-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 32px;
+/* Bar Chart */
+.bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.bar-container {
-    margin-bottom: 20px;
+.bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.bar-label {
+.bar-header {
     display: flex;
     justify-content: space-between;
     font-size: 13px;
-    margin-bottom: 10px;
 }
 
-.bar-label span:first-child {
-    color: var(--text-secondary);
+.bar-header .label {
+    color: var(--text-medium);
 }
 
-.bar-label span:last-child {
+.bar-header .value {
     font-weight: 600;
 }
 
-.bar-label.bad span:last-child {
+.bar-header .value.bad {
     color: var(--danger);
 }
 
-.bar-label.good span:last-child {
-    color: var(--success);
+.bar-header .value.good {
+    color: var(--accent);
 }
 
 .bar-track {
     height: 8px;
-    background: rgba(255,255,255,0.1);
+    background: var(--border-light);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -356,20 +451,28 @@ h2 .accent {
 }
 
 .bar-fill.good {
-    background: var(--success);
+    background: var(--accent);
 }
 
-/* Comparison table */
+/* Comparison Table */
 .comparison-table {
     margin-top: 48px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
     overflow: hidden;
+}
+
+.dark .comparison-table {
+    border-color: var(--border-dark);
 }
 
 .comparison-header {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
+    background: var(--bg-light);
+}
+
+.dark .comparison-header {
     background: rgba(255,255,255,0.05);
 }
 
@@ -392,15 +495,15 @@ h2 .accent {
 .comparison-row {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--border-light);
 }
 
-.comparison-row:last-child {
-    border-bottom: none;
+.dark .comparison-row {
+    border-color: var(--border-dark);
 }
 
 .comparison-row > div {
-    padding: 14px 24px;
+    padding: 16px 24px;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -409,7 +512,11 @@ h2 .accent {
 
 .comparison-row > div:first-child {
     justify-content: flex-start;
-    color: var(--text-secondary);
+    color: var(--text-medium);
+}
+
+.dark .comparison-row > div:first-child {
+    color: var(--text-white-muted);
 }
 
 .status-bad {
@@ -417,65 +524,69 @@ h2 .accent {
 }
 
 .status-good {
-    color: var(--success);
-    font-weight: 500;
+    color: var(--accent);
+    font-weight: 600;
 }
 
-/* Quote section */
-.quote-section {
+/* Quote */
+.quote-box {
     max-width: 700px;
-    border-left: 3px solid var(--accent);
-    padding-left: 32px;
     margin: 48px 0;
 }
 
 .quote-text {
     font-size: 24px;
     line-height: 1.6;
-    color: var(--text-primary);
-    margin-bottom: 24px;
+    color: var(--text-dark);
+    font-style: italic;
+}
+
+.dark .quote-text {
+    color: var(--text-white);
 }
 
 .quote-author {
-    font-weight: 500;
-    color: var(--text-primary);
+    margin-top: 24px;
+}
+
+.quote-name {
+    font-weight: 600;
     font-size: 15px;
 }
 
 .quote-title {
-    color: var(--text-muted);
-    font-size: 13px;
+    font-size: 14px;
+    color: var(--text-medium);
 }
 
-/* CTA Section */
+.dark .quote-title {
+    color: var(--text-white-muted);
+}
+
+/* CTA */
 .cta-section {
     background: var(--accent);
-    padding: 80px 48px;
     text-align: center;
+    padding: 80px 48px;
 }
 
 .cta-section h2 {
     color: white;
-    margin-bottom: 16px;
-}
-
-.cta-section h2 .accent {
-    color: white;
-    font-style: normal;
 }
 
 .cta-subtitle {
     font-size: 18px;
     color: rgba(255,255,255,0.9);
-    margin-bottom: 32px;
+    max-width: 500px;
+    margin: 0 auto 32px;
 }
 
 .cta-button {
     display: inline-block;
     background: white;
-    color: var(--accent);
-    padding: 16px 40px;
-    border-radius: 6px;
+    color: var(--accent-muted);
+    padding: 16px 32px;
+    border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
@@ -484,51 +595,44 @@ h2 .accent {
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* Footer */
 footer {
     padding: 48px;
-    border-top: 1px solid var(--border);
+    background: var(--bg-dark);
+    color: var(--text-white-muted);
 }
 
-.footer-assumptions {
+.footer-title {
     font-size: 11px;
-    letter-spacing: 1.5px;
-    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 16px;
+    color: var(--text-light);
 }
 
-.assumptions-grid {
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
     font-size: 13px;
-    color: var(--text-muted);
 }
 
-.assumptions-section {
-    margin-bottom: 16px;
-}
-
-.assumptions-title {
-    color: var(--text-secondary);
+.footer-item {
     margin-bottom: 8px;
 }
 
-.assumptions-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 32px;
-}
-
 /* Responsive */
-@media (max-width: 768px) {
-    header {
-        padding: 16px 24px;
+@media (max-width: 900px) {
+    section {
+        padding: 80px 24px;
     }
 
-    section {
-        padding: 100px 24px 60px;
+    header {
+        padding: 16px 24px;
     }
 
     h1 {
@@ -536,26 +640,27 @@ footer {
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
-    .stats-row {
+    .hero-stats {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .metrics-grid {
         grid-template-columns: 1fr;
     }
 
-    .calc-grid {
+    .calc-layout {
         grid-template-columns: 1fr;
-    }
-
-    .stat-value {
-        font-size: 36px;
     }
 
     .problem-grid {
         grid-template-columns: 1fr;
     }
 
-    .problem-stat {
+    .problem-stats {
         flex-direction: column;
         gap: 24px;
     }
@@ -563,60 +668,55 @@ footer {
     .comparison-table {
         font-size: 12px;
     }
-
-    .comparison-header > div,
-    .comparison-row > div {
-        padding: 12px 16px;
-    }
 }
     </style>
 </head>
-<body class="grid-bg">
+<body>
     <header>
-        <div class="logo">twodots</div>
-        <div class="badge">PREPARED FOR WASATCH</div>
+        <img src="https://cdn.prod.website-files.com/68e55a3fff11bea11db40003/68e55a3fff11bea11db4016e_logo-white-cropped.svg" alt="twodots" class="logo">
+        <div class="badge">Prepared for Wasatch</div>
     </header>
 
-    <!-- Hero Section -->
-    <section>
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
-            <div class="section-label">— PORTFOLIO ANALYSIS REPORT</div>
-            <h1>Wasatch could capture <span class="accent">$7.8M</span></h1>
-            <p class="subtitle">Vacant days, manual underwriting, and defaults are costing you millions annually. For Wasatch's portfolio, twodots could add $7.8M in annual NOI to your bottom line.</p>
+            <div class="section-label">Portfolio Analysis</div>
+            <h1>Wasatch could capture $7.8M in annual NOI</h1>
+            <p class="subtitle">Vacant days, manual underwriting, and defaults are costing you millions annually. For Wasatch's 17,424-unit portfolio, twodots could add $7.8M to your bottom line.</p>
 
-            <div class="stats-row">
-                <div class="stat-card">
-                    <div class="stat-value">17,424</div>
-                    <div class="stat-label">Units Analyzed</div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">17,424</div>
+                    <div class="hero-stat-label">Units analyzed</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value"><span class="accent">$7.8M</span></div>
-                    <div class="stat-label">Annual NOI Impact</div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">$7.8M</div>
+                    <div class="hero-stat-label">Annual NOI impact</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value"><span class="accent">$155M</span></div>
-                    <div class="stat-label">Asset Value (5% Cap)</div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">$155M</div>
+                    <div class="hero-stat-label">Asset value at 5% cap</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 1: Vacancy Recapture -->
-    <section>
+    <!-- Vacancy Recapture -->
+    <section class="dark">
         <div class="container">
-            <div class="section-label">01 — ACCELERATING LEASING VELOCITY</div>
-            <h2>Recapture <span class="accent">lost</span> rent</h2>
-            <p class="subtitle">Eve's agentic screening collects documents, follows up, and reaches a decision in a single session—approving in minutes, not days, to put qualified residents in units faster.</p>
+            <div class="section-label">01 Accelerating Leasing Velocity</div>
+            <h2>Recapture lost rent</h2>
+            <p class="subtitle">Eve's agentic screening collects documents, follows up, and reaches a decision in a single session—approving in minutes, not days.</p>
 
-            <div class="calc-grid">
+            <div class="calc-layout">
                 <div class="calc-box">
-                    <div class="calc-box-title">Vacancy Recapture</div>
+                    <div class="calc-title">Vacancy Recapture</div>
                     <div class="calc-row">
-                        <span class="calc-label">Annual turnovers (50% turnover)</span>
+                        <span class="calc-label">Annual turnovers (50%)</span>
                         <span class="calc-value">8,712</span>
                     </div>
                     <div class="calc-row">
-                        <span class="calc-label">Daily rent ($1,683/30)</span>
+                        <span class="calc-label">Daily rent ($1,683 / 30)</span>
                         <span class="calc-value">$56.10</span>
                     </div>
                     <div class="calc-row">
@@ -624,14 +724,14 @@ footer {
                         <span class="calc-value highlight">6 days</span>
                     </div>
                     <div class="calc-row">
-                        <span class="calc-label">8,712 × $56.10 × 6</span>
+                        <span class="calc-label">8,712 x $56.10 x 6</span>
                         <span class="calc-value highlight">= $2,934,014</span>
                     </div>
                 </div>
-                <div class="calc-box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                    <div class="calc-box-title">Annual Vacancy Recapture</div>
-                    <div style="font-family: 'Playfair Display', serif; font-size: 48px; color: var(--accent);">$2.9M</div>
-                    <div style="color: var(--text-muted); font-size: 13px; margin-top: 12px;">From faster application-to-move-in</div>
+                <div class="calc-box result-box">
+                    <div class="calc-title">Annual Savings</div>
+                    <div class="result-value">$2.9M</div>
+                    <div class="result-label">From faster application-to-move-in</div>
                 </div>
             </div>
 
@@ -641,23 +741,23 @@ footer {
         </div>
     </section>
 
-    <!-- Section 2: Labor Savings -->
+    <!-- Labor Savings -->
     <section>
         <div class="container">
-            <div class="section-label">02 — OPERATIONAL EFFICIENCY</div>
-            <h2>Automate <span class="accent">screening</span></h2>
-            <p class="subtitle">Eve delivers 100% automation with zero handoffs—automated follow-ups gather additional information, and complex cases go to our human specialists, not your team.</p>
+            <div class="section-label">02 Operational Efficiency</div>
+            <h2>Automate screening</h2>
+            <p class="subtitle">Eve delivers 100% automation with zero handoffs—complex cases go to our human specialists, not your team.</p>
 
-            <div class="calc-grid">
+            <div class="calc-layout">
                 <div class="calc-box">
-                    <div class="calc-box-title">Time Savings</div>
+                    <div class="calc-title">Time Savings</div>
                     <div class="calc-row">
                         <span class="calc-label">Annual applications (3 per turn)</span>
                         <span class="calc-value">26,136</span>
                     </div>
                     <div class="calc-row">
-                        <span class="calc-label">Hours saved per app</span>
-                        <span class="calc-value">1.5 hours</span>
+                        <span class="calc-label">Hours saved per application</span>
+                        <span class="calc-value">1.5 hrs</span>
                     </div>
                     <div class="calc-row">
                         <span class="calc-label">Total hours saved</span>
@@ -665,13 +765,13 @@ footer {
                     </div>
                 </div>
                 <div class="calc-box">
-                    <div class="calc-box-title">Labor Value</div>
+                    <div class="calc-title">Labor Value</div>
                     <div class="calc-row">
                         <span class="calc-label">Fully loaded hourly rate</span>
                         <span class="calc-value">$30/hr</span>
                     </div>
                     <div class="calc-row">
-                        <span class="calc-label">39,204 × $30</span>
+                        <span class="calc-label">39,204 x $30</span>
                         <span class="calc-value highlight">= $1,175,520</span>
                     </div>
                     <div class="calc-row">
@@ -682,27 +782,27 @@ footer {
             </div>
 
             <div class="callout">
-                <p>Across 92K units, BH—the 11th largest apartment manager in the U.S.—has automated and centralized screening with twodots. They went from 400 agents doing underwriting to a 17-person centralized team.</p>
+                <p>BH Management—the 11th largest apartment operator in the U.S.—went from 400 agents doing underwriting to a 17-person centralized team with twodots.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Default Cost Savings -->
-    <section>
+    <!-- Default Savings -->
+    <section class="dark">
         <div class="container">
-            <div class="section-label">03 — REDUCING DEFAULT RISK</div>
-            <h2>Protect against total <span class="accent">default</span> costs</h2>
-            <p class="subtitle">Eve's dynamic fraud prevention detects CPN fraud, verifies offer letters with deep investigative research, and resolves each case in real-time—reducing default costs by up to 60%.</p>
+            <div class="section-label">03 Reducing Default Risk</div>
+            <h2>Protect against default costs</h2>
+            <p class="subtitle">Eve's dynamic fraud prevention detects CPN fraud, verifies offer letters with deep investigative research, and resolves each case in real-time.</p>
 
-            <div class="calc-grid">
+            <div class="calc-layout">
                 <div class="calc-box">
-                    <div class="calc-box-title">Current Exposure</div>
+                    <div class="calc-title">Current Exposure</div>
                     <div class="calc-row">
                         <span class="calc-label">Bad debt (1% of $352M GPR)</span>
                         <span class="calc-value">$3,518,132</span>
                     </div>
                     <div class="calc-row">
-                        <span class="calc-label">Annual defaults (523)</span>
+                        <span class="calc-label">Annual defaults</span>
                         <span class="calc-value">523</span>
                     </div>
                     <div class="calc-row">
@@ -715,13 +815,13 @@ footer {
                     </div>
                 </div>
                 <div class="calc-box">
-                    <div class="calc-box-title">twodots Impact</div>
+                    <div class="calc-title">twodots Impact</div>
                     <div class="calc-row">
                         <span class="calc-label">Default reduction rate</span>
                         <span class="calc-value highlight">60%</span>
                     </div>
                     <div class="calc-row">
-                        <span class="calc-label">$6,112,212 × 60%</span>
+                        <span class="calc-label">$6,112,212 x 60%</span>
                         <span class="calc-value highlight">= $3,667,327</span>
                     </div>
                     <div class="calc-row">
@@ -737,62 +837,61 @@ footer {
         </div>
     </section>
 
-    <!-- Arizona Problem Section -->
+    <!-- Arizona Problem -->
     <section>
         <div class="container">
-            <div class="section-label">— THE ARIZONA CHALLENGE</div>
-            <h2>Your Class C properties are <span class="accent">struggling</span></h2>
+            <div class="section-label">The Arizona Challenge</div>
+            <h2>Your Class C properties are struggling</h2>
 
             <div class="problem-grid">
                 <div>
-                    <p class="subtitle" style="margin-bottom: 24px;">With a 50% denial rate on your Arizona C product, you're losing qualified residents while still letting fraudsters slip through traditional screening. MRI background checks taking 5-10 days isn't working.</p>
+                    <p class="subtitle" style="margin-bottom: 0;">With a 50% denial rate on your Arizona C product, you're losing qualified residents while still letting fraudsters slip through. MRI background checks taking 5-10 days isn't working.</p>
 
-                    <div class="problem-stat">
-                        <div class="problem-stat-item">
+                    <div class="problem-stats">
+                        <div>
                             <div class="problem-stat-value">50%</div>
                             <div class="problem-stat-label">Current denial rate</div>
                         </div>
-                        <div class="problem-stat-item">
+                        <div>
                             <div class="problem-stat-value">5-10</div>
                             <div class="problem-stat-label">Days for background checks</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="problem-card">
-                    <div class="calc-box-title" style="margin-bottom: 24px;">Arizona Class C Performance</div>
-
-                    <div class="bar-container">
-                        <div class="bar-label bad">
-                            <span>Current Denial Rate (MRI)</span>
-                            <span>50%</span>
+                <div class="calc-box">
+                    <div class="calc-title">Arizona Class C Performance</div>
+                    <div class="bar-chart">
+                        <div class="bar-item">
+                            <div class="bar-header">
+                                <span class="label">Current Denial Rate (MRI)</span>
+                                <span class="value bad">50%</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill bad" style="width: 50%"></div>
+                            </div>
                         </div>
-                        <div class="bar-track">
-                            <div class="bar-fill bad" style="width: 50%"></div>
+                        <div class="bar-item">
+                            <div class="bar-header">
+                                <span class="label">twodots National Approval Rate</span>
+                                <span class="value good">85%</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill good" style="width: 85%"></div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="bar-container">
-                        <div class="bar-label good">
-                            <span>twodots National Approval Rate</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="bar-track">
-                            <div class="bar-fill good" style="width: 85%"></div>
-                        </div>
-                    </div>
-
-                    <p style="font-size: 13px; color: var(--text-muted); margin-top: 24px; font-style: italic;">Better fraud detection + income verification = more qualified approvals, fewer bad actors</p>
+                    <p style="font-size: 13px; color: var(--text-light); margin-top: 24px;">Better fraud detection + income verification = more qualified approvals, fewer bad actors</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Total Impact Section -->
-    <section>
+    <!-- Total Impact -->
+    <section class="dark">
         <div class="container">
-            <div class="section-label">04 — TOTAL IMPACT</div>
-            <h2>Capture <span class="accent">$7.8M</span> in annual NOI</h2>
+            <div class="section-label">04 Total Impact</div>
+            <h2>Capture $7.8M in annual NOI</h2>
 
             <div class="summary-table">
                 <div class="summary-row">
@@ -808,24 +907,33 @@ footer {
                     <span class="summary-value">$3,667,327</span>
                 </div>
                 <div class="summary-row total">
-                    <span class="summary-label">TOTAL ANNUAL VALUE</span>
+                    <span class="summary-label">Total Annual Value</span>
                     <span class="summary-value">$7,776,861</span>
                 </div>
             </div>
 
-            <div class="calc-box" style="margin-top: 48px; text-align: center; padding: 48px;">
-                <div class="calc-box-title" style="margin-bottom: 16px;">Asset Value Impact (5% Cap Rate)</div>
-                <div style="font-family: 'Playfair Display', serif; font-size: 56px; color: var(--accent);">$155.5M</div>
-                <div style="color: var(--text-muted); font-size: 14px; margin-top: 12px;">4.0% NOI improvement on $352M GPR</div>
+            <div class="metrics-grid" style="margin-top: 60px;">
+                <div class="metric-card">
+                    <div class="metric-value accent">$155.5M</div>
+                    <div class="metric-label">Asset value impact (5% cap)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value accent">4.0%</div>
+                    <div class="metric-label">NOI improvement</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value accent">$446</div>
+                    <div class="metric-label">Value per unit</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
-    <section class="auto-height" style="padding-top: 80px; padding-bottom: 80px;">
+    <!-- Comparison -->
+    <section>
         <div class="container">
-            <div class="section-label">— WHY SWITCH</div>
-            <h2>twodots vs. <span class="accent">traditional</span> screening</h2>
+            <div class="section-label">Why Switch</div>
+            <h2>twodots vs. traditional screening</h2>
             <p class="subtitle">You've been with MRI for 15 years. You're evaluating Yardi Screening. Here's why 7 of the Top 10 NMHC operators chose twodots instead.</p>
 
             <div class="comparison-table">
@@ -836,18 +944,18 @@ footer {
                 </div>
                 <div class="comparison-row">
                     <div>Detects fake paystubs & bank statements</div>
-                    <div class="status-bad">✗ No</div>
-                    <div class="status-good">✓ Yes</div>
+                    <div class="status-bad">No</div>
+                    <div class="status-good">Yes</div>
                 </div>
                 <div class="comparison-row">
                     <div>Stops CPNs / synthetic identities</div>
-                    <div class="status-bad">✗ No</div>
-                    <div class="status-good">✓ Yes</div>
+                    <div class="status-bad">No</div>
+                    <div class="status-good">Yes</div>
                 </div>
                 <div class="comparison-row">
                     <div>Verifies actual bank deposits</div>
-                    <div class="status-bad">✗ No</div>
-                    <div class="status-good">✓ Yes</div>
+                    <div class="status-bad">No</div>
+                    <div class="status-good">Yes</div>
                 </div>
                 <div class="comparison-row">
                     <div>Automated approve/deny decisions</div>
@@ -878,14 +986,14 @@ footer {
         </div>
     </section>
 
-    <!-- Quote Section -->
-    <section class="auto-height" style="padding-top: 80px; padding-bottom: 80px;">
+    <!-- Quote -->
+    <section class="dark">
         <div class="container">
-            <div class="section-label">— RESULTS</div>
-            <div class="quote-section">
+            <div class="section-label">Results</div>
+            <div class="quote-box">
                 <p class="quote-text">"twodots has been a game changer for BH. The efficiencies we are able to achieve simply wouldn't be possible without them."</p>
-                <div>
-                    <div class="quote-author">Christi Weinstein</div>
+                <div class="quote-author">
+                    <div class="quote-name">Christi Weinstein</div>
                     <div class="quote-title">COO, BH Management (92K units)</div>
                 </div>
             </div>
@@ -893,91 +1001,53 @@ footer {
     </section>
 
     <!-- Yardi Integration -->
-    <section class="auto-height" style="padding-top: 80px; padding-bottom: 80px;">
+    <section>
         <div class="container">
-            <div class="section-label">— INTEGRATION</div>
-            <h2>Works right inside <span class="accent">Yardi</span></h2>
+            <div class="section-label">Integration</div>
+            <h2>Works right inside Yardi</h2>
             <p class="subtitle">twodots delivers the strongest API integration in the industry with Yardi. Your site teams see approvals and denials exactly where they work today—no new screens, no new logins, no retraining.</p>
 
-            <div class="calc-grid">
-                <div class="calc-box">
-                    <div class="calc-box-title">What Your Team Sees</div>
-                    <div class="calc-row">
-                        <span class="calc-label">Approve/Deny in Yardi</span>
-                        <span class="calc-value highlight">✓</span>
-                    </div>
-                    <div class="calc-row">
-                        <span class="calc-label">Bidirectional sync</span>
-                        <span class="calc-value highlight">✓</span>
-                    </div>
-                    <div class="calc-row">
-                        <span class="calc-label">Documents auto-attached</span>
-                        <span class="calc-value highlight">✓</span>
-                    </div>
-                    <div class="calc-row">
-                        <span class="calc-label">New screens to learn</span>
-                        <span class="calc-value highlight">Zero</span>
-                    </div>
+            <div class="metrics-grid" style="margin-top: 48px;">
+                <div class="metric-card">
+                    <div class="metric-value accent" style="font-size: 24px;">Approve/Deny in Yardi</div>
+                    <div class="metric-label">Results appear automatically</div>
                 </div>
-                <div class="calc-box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 16px;">
-                    <div style="font-size: 32px; font-weight: 600;">Yardi</div>
-                    <div style="font-size: 24px; color: var(--accent);">+</div>
-                    <div style="font-size: 32px; font-weight: 600;">twodots</div>
-                    <div style="color: var(--text-muted); font-size: 13px; margin-top: 8px;">Deepest integration in the industry</div>
+                <div class="metric-card">
+                    <div class="metric-value accent" style="font-size: 24px;">Bidirectional Sync</div>
+                    <div class="metric-label">Real-time data flow</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value accent" style="font-size: 24px;">Zero Training</div>
+                    <div class="metric-label">No new screens to learn</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section auto-height">
-        <div class="container" style="text-align: center;">
-            <h2>Let's prove it on your <span class="accent">Arizona</span> portfolio</h2>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Let's prove it on your Arizona portfolio</h2>
             <p class="cta-subtitle">We'll run a free back test on your Class C properties—so you can see exactly how many fraudulent applicants twodots would have caught.</p>
-            <a href="mailto:john@twodots.net?subject=Wasatch%20Back%20Test%20-%20Arizona%20Portfolio" class="cta-button">Start the Back Test →</a>
+            <a href="mailto:john.kodros@twodots.net?subject=Wasatch%20Back%20Test%20-%20Arizona%20Portfolio" class="cta-button">Start the Back Test</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-assumptions">Assumptions</div>
-            <div class="assumptions-grid">
-                <div class="assumptions-section">
-                    <div class="assumptions-title">Portfolio Data:</div>
-                    <div class="assumptions-items">
-                        <span>17,424 units</span>
-                        <span>$1,683 avg monthly rent</span>
-                        <span>$351.8M gross potential rent</span>
-                    </div>
+            <div class="footer-title">Assumptions</div>
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-item"><strong>Portfolio:</strong> 17,424 units, $1,683 avg rent, $351.8M GPR</div>
+                    <div class="footer-item"><strong>Vacancy:</strong> 50% turnover, 6 days saved per turn</div>
                 </div>
-                <div class="assumptions-section">
-                    <div class="assumptions-title">Vacancy Recapture:</div>
-                    <div class="assumptions-items">
-                        <span>Turnover rate: 50% annually</span>
-                        <span>Days saved per turn: 6</span>
-                    </div>
-                </div>
-                <div class="assumptions-section">
-                    <div class="assumptions-title">Labor Savings:</div>
-                    <div class="assumptions-items">
-                        <span>Applications per turnover: 3</span>
-                        <span>Hours per application: 1.5</span>
-                        <span>Fully loaded hourly rate: $30/hr</span>
-                    </div>
-                </div>
-                <div class="assumptions-section">
-                    <div class="assumptions-title">Default Cost Methodology:</div>
-                    <div class="assumptions-items">
-                        <span>Bad debt rate: 1% of GPR</span>
-                        <span>~4 months unpaid rent per default → 30 defaults per 1,000 units (523 annually)</span>
-                        <span>Per-default costs: $875 legal, $1,500 make-ready, $650 marketing, 1.15 months vacancy</span>
-                        <span>Default reduction: 60%</span>
-                    </div>
+                <div>
+                    <div class="footer-item"><strong>Labor:</strong> 3 apps/turn, 1.5 hrs/app, $30/hr</div>
+                    <div class="footer-item"><strong>Defaults:</strong> 1% bad debt, 60% reduction rate</div>
                 </div>
             </div>
         </div>
     </footer>
-
 </body>
 </html>
